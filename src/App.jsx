@@ -1,12 +1,17 @@
+import { useRef } from "react"
 
 function App() {
 
+  const inputRef = useRef();
+
   function focusOnInput() {
-    document.getElementById("name").focus()
+
+    inputRef.current.focus();
+    // document.getElementById("name").focus()
   }
   return <div>
     Sign Up
-    <input id="name" type="text" ></input>
+    <input ref={inputRef} type="text" ></input>
     <input type="text" ></input>
     <button onClick={focusOnInput}>Submit</button>
   </div>
